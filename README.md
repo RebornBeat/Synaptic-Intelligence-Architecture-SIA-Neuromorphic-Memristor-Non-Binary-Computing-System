@@ -1012,7 +1012,7 @@ Global consciousness architectures enable planet-scale temporal-analog processin
 
 This evolutionary pathway demonstrates how TAPF enables computational advancement that progresses naturally from current technology through biological integration toward collective intelligence architectures that enhance human capability while transcending current technological limitations through temporal-analog processing paradigms that mirror and exceed biological neural network capability.
 
-# Section 4: Universal Electrical Signal Format Specification
+# 4. Universal Electrical Signal Format Specification
 
 ## Foundational Principles of Universal Electrical Signal Representation
 
@@ -2001,172 +2001,811 @@ Integration algorithms provide sophisticated correlation analysis that accounts 
 
 This comprehensive signal format specification establishes the electrical and temporal foundations that enable revolutionary temporal-analog computing while maintaining practical implementation characteristics and providing clear guidelines for engineering teams developing TAPF-compatible systems and applications.
 
-## TAPF Format Structure Specification
+# Section 5: Complete Electrical Signal Implementation Standards
 
-### Primary Format Components
+## Educational Foundation for Electrical Signal Specifications
 
-**1. Temporal Header (32 bytes)**
-```c
+Understanding electrical signal implementation standards for temporal-analog processing requires recognizing that we are establishing entirely new electrical engineering principles that transcend traditional digital logic while building upon decades of advancement in semiconductor technology and precision analog circuit design. Think of this as learning how to design electrical systems that work more like biological neural networks than like traditional computers, where timing relationships and analog precision carry computational meaning rather than just discrete voltage levels.
+
+Traditional digital systems simplify electrical signals to two discrete voltage levels representing zero and one, requiring massive clock synchronization overhead to coordinate billions of transistors switching at predetermined intervals regardless of whether useful computation occurs. This approach wastes enormous amounts of energy maintaining synchronization while forcing all natural phenomena through inappropriate discrete representations that lose essential temporal relationships and analog precision.
+
+Temporal-analog processing preserves the natural electrical characteristics that emerge when sensors transduce real-world phenomena into electrical signals. When a microphone converts sound waves into electrical signals, those signals naturally preserve the temporal flow and amplitude variations that characterize the original sound. Instead of immediately digitizing these signals and losing their temporal-analog characteristics, TAPF maintains them in their natural electrical form throughout the computational process.
+
+The implementation standards we establish here will enable hardware manufacturers to build processors that work naturally with these temporal-analog electrical signals while achieving computational capabilities that exceed traditional digital approaches. We will progress from fundamental electrical specifications through advanced implementation requirements, always maintaining the educational foundation that helps engineers understand why each specification contributes to revolutionary computational capability.
+
+Consider how these specifications differ from traditional digital logic standards. Digital systems specify discrete voltage thresholds that separate zero and one states while ignoring timing relationships between signals. Temporal-analog systems specify continuous voltage ranges, precise timing relationships, and adaptive resistance characteristics that enable natural processing of temporal patterns and analog precision while providing computational universality that includes and exceeds digital capability.
+
+## Fundamental Voltage Range and Amplitude Specifications
+
+### Optimized Voltage Range Selection and Justification
+
+The selection of voltage ranges for temporal-analog processing requires careful consideration of multiple competing factors including signal-to-noise ratio optimization, power consumption efficiency, semiconductor process compatibility, and natural sensor output characteristics. Understanding why we choose specific voltage ranges requires recognizing that temporal-analog processing places different demands on electrical systems compared to traditional digital logic.
+
+Traditional digital systems utilize voltage ranges optimized for discrete threshold detection, typically operating at 3.3 volts or 5.0 volts to provide adequate noise margins while remaining compatible with semiconductor process voltages. These ranges work well for discrete logic operations but provide no capability for analog precision or confidence level representation that characterizes temporal-analog processing requirements.
+
+Temporal-analog processing requires voltage ranges that optimize analog precision while maintaining practical implementation using current semiconductor technology. After extensive analysis of sensor output characteristics, analog processing requirements, and semiconductor process compatibility, we establish the standard voltage range from 0.0 volts to 12.0 volts for temporal-analog processing applications.
+
+This voltage range provides several critical advantages that enable superior temporal-analog processing capability. The 12-volt range enables 14-bit analog precision equivalent to 16,384 discrete levels, providing analog resolution of approximately 0.73 millivolts per level that exceeds the precision requirements for most computational applications while remaining achievable using current analog-to-digital converter technology and precision voltage reference designs.
+
+The extended voltage range accommodates natural sensor output characteristics without requiring amplification that could introduce noise or distortion. Temperature sensors, pressure transducers, chemical analysis systems, and electromagnetic field detectors typically produce output voltages spanning several volts when measuring their full operating ranges. The 12-volt range enables direct processing of these sensor outputs while preserving their natural temporal-analog characteristics.
+
+Power supply compatibility considerations ensure that 12-volt operation remains practical for diverse deployment scenarios. Standard power supply designs readily provide 12-volt outputs with adequate regulation and current capability for temporal-analog processing requirements. Battery-powered applications can utilize efficient switching converters to generate 12-volt supplies from lower voltage batteries while maintaining energy efficiency adequate for portable deployment.
+
+The voltage range enables natural representation of confidence levels and probability distributions through continuous amplitude variation. A signal amplitude of 0.0 volts represents complete absence or absolute false with perfect confidence. A signal amplitude of 12.0 volts represents complete presence or absolute true with perfect confidence. Intermediate amplitude levels represent confidence degrees and probability values with precision adequate for sophisticated decision making under uncertainty conditions.
+
+```electrical_specs
+// Standard TAPF Voltage Range Specifications
+#define TAPF_VOLTAGE_MIN          0.0    // Volts - Absolute minimum (binary 0 equivalent)
+#define TAPF_VOLTAGE_MAX          12.0   // Volts - Absolute maximum (binary 1 equivalent)
+#define TAPF_VOLTAGE_RESOLUTION   0.732  // Millivolts per level (12V / 16384 levels)
+#define TAPF_VOLTAGE_ACCURACY     ±0.1   // Percent accuracy requirement
+#define TAPF_VOLTAGE_STABILITY    ±50    // PPM drift over temperature range
+#define TAPF_VOLTAGE_NOISE_MAX    1.0    // Millivolts RMS maximum noise
+```
+
+### Amplitude Control and Precision Requirements
+
+Amplitude control systems must provide continuous voltage generation with precision and stability adequate for temporal-analog computation while maintaining fast settling times that enable real-time amplitude adjustment during computational processing. Understanding amplitude control requirements involves recognizing that analog voltage precision directly affects computational accuracy while settling time characteristics determine processing speed capability.
+
+Voltage precision requirements specify that amplitude control circuits maintain output voltages within 0.1% of commanded values across operational temperature ranges and aging characteristics. This precision ensures that computational operations maintain accuracy while enabling confidence level representation and probability distribution processing that depends on precise analog voltage control.
+
+The precision requirement translates to approximately 12 millivolts accuracy across the full 12-volt range, ensuring that confidence levels and probability values maintain computational significance while providing adequate resolution for sophisticated uncertainty reasoning and decision making under uncertain conditions.
+
+Settling time specifications require amplitude control circuits to achieve specified voltage levels within 10 microseconds of command changes for standard applications. This settling time enables real-time amplitude adjustment during temporal processing while maintaining computational throughput adequate for interactive applications and real-time control systems.
+
+Advanced applications requiring enhanced processing speed may specify settling times within 1 microsecond for high-speed temporal processing, while low-power applications may accept settling times up to 100 microseconds to reduce power consumption during amplitude adjustment operations.
+
+Temperature stability requirements specify amplitude accuracy maintenance across operational temperature ranges from -40°C to +85°C for standard applications and -55°C to +125°C for extended range applications. Temperature compensation circuits must maintain voltage accuracy within specification limits despite temperature-dependent characteristics of reference voltages and amplifier circuits.
+
+Long-term stability requirements specify amplitude accuracy maintenance over operational lifetime periods of minimum 20 years under normal operational conditions. Aging compensation techniques may be required to maintain accuracy despite component aging effects that could compromise computational precision over extended operational periods.
+
+```electrical_specs
+// TAPF Amplitude Control Specifications
 typedef struct {
-    uint32_t format_version;      // TAPF version identifier
-    uint32_t spike_pattern_count; // Number of temporal patterns
-    uint32_t memristor_count;     // Number of analog weights (0.0-1.0)
-    uint32_t intelligence_size;   // Size of embedded processing intelligence
-    float    base_frequency;      // Base temporal frequency (Hz)
-    float    time_precision;      // Temporal resolution (microseconds)
-    uint32_t adaptation_flags;    // Hardware adaptation capabilities
-    uint32_t reserved;           // Future expansion
-} TAPFHeader;
+    float commanded_voltage;      // 0.0 to 12.0 volts
+    float actual_voltage;        // Measured output voltage
+    float settling_time_us;      // Time to reach 99% of final value
+    float accuracy_percent;      // ±0.1% accuracy requirement
+    float temperature_coeff_ppm; // Temperature drift in PPM/°C
+    float noise_rms_mv;         // RMS noise in millivolts
+    float stability_ppm_year;   // Long-term stability specification
+} TAPF_AmplitudeControl;
+
+// Standard amplitude control performance requirements
+static const TAPF_AmplitudeControl standard_amplitude_specs = {
+    .commanded_voltage = 0.0,           // Variable 0.0-12.0V
+    .actual_voltage = 0.0,              // Measured feedback
+    .settling_time_us = 10.0,           // 10 microsecond settling
+    .accuracy_percent = 0.1,            // ±0.1% accuracy
+    .temperature_coeff_ppm = 20.0,      // 20 PPM/°C max drift
+    .noise_rms_mv = 1.0,               // 1 mV RMS noise max
+    .stability_ppm_year = 50.0         // 50 PPM/year aging max
+};
 ```
 
-**2. Spike Pattern Data Structure**
-```c
+### Signal-to-Noise Ratio and Dynamic Range Optimization
+
+Signal-to-noise ratio requirements ensure that temporal-analog processing maintains computational accuracy despite electrical noise sources that could compromise analog precision and temporal correlation detection. Understanding noise requirements involves recognizing that both thermal noise and interference sources can affect computational accuracy while proper circuit design can maintain adequate signal-to-noise ratios for reliable temporal-analog processing.
+
+Thermal noise represents the fundamental limit for analog precision in electrical systems, arising from random thermal motion of charge carriers in resistive elements and amplifier circuits. Thermal noise power increases with temperature and bandwidth, requiring careful circuit design that balances noise performance with processing speed requirements.
+
+The thermal noise voltage in a resistive element equals the square root of (4 × k × T × R × BW), where k is Boltzmann's constant, T is absolute temperature, R is resistance, and BW is bandwidth. For a 1-kilohm resistance at room temperature with 1-MHz bandwidth, thermal noise equals approximately 4 microvolts RMS.
+
+Signal-to-noise ratio specifications require noise levels at least 74 dB below full-scale signal levels, equivalent to signal-to-noise ratios exceeding 5000:1 that ensure 12-bit analog precision maintenance despite thermal noise and interference sources. This specification provides computational accuracy that exceeds most application requirements while remaining achievable using current low-noise amplifier designs and careful circuit layout techniques.
+
+Dynamic range specifications require amplitude processing circuits to maintain linearity and accuracy across the full 12-volt range while providing adequate signal handling capability for maximum amplitude signals without distortion that could compromise computational accuracy.
+
+Linearity specifications require differential nonlinearity better than 0.01% and integral nonlinearity better than 0.02% across the full amplitude range, ensuring that analog computations maintain accuracy while enabling precise confidence level and probability distribution processing.
+
+Harmonic distortion specifications require total harmonic distortion less than 0.001% for sinusoidal test signals, ensuring that temporal correlation processing maintains accuracy while preventing harmonic interference that could generate false correlation signals or compromise temporal relationship detection.
+
+```electrical_specs
+// TAPF Signal Quality Specifications
 typedef struct {
-    float    timestamp;          // Spike timing (microseconds precision)
-    float    amplitude;          // Spike strength (0.0-1.0)
-    uint32_t pattern_id;         // Pattern classification
-    float    decay_rate;         // Temporal decay factor
-} SpikeEvent;
+    float signal_to_noise_db;     // Minimum S/N ratio in dB
+    float dynamic_range_db;       // Full-scale dynamic range
+    float differential_nl_percent; // Differential non-linearity
+    float integral_nl_percent;    // Integral non-linearity  
+    float thd_percent;           // Total harmonic distortion
+    float bandwidth_hz;          // Processing bandwidth
+    float thermal_noise_uv_rms;  // Thermal noise floor
+} TAPF_SignalQuality;
 
+// Standard signal quality requirements
+static const TAPF_SignalQuality standard_signal_specs = {
+    .signal_to_noise_db = 74.0,        // 74 dB S/N minimum
+    .dynamic_range_db = 72.0,          // 72 dB dynamic range
+    .differential_nl_percent = 0.01,    // 0.01% DNL max
+    .integral_nl_percent = 0.02,       // 0.02% INL max
+    .thd_percent = 0.001,              // 0.001% THD max
+    .bandwidth_hz = 10000000.0,        // 10 MHz bandwidth
+    .thermal_noise_uv_rms = 4.0        // 4 µV RMS thermal noise
+};
+```
+
+## Temporal Precision and Timing Specifications
+
+### Microsecond-Level Timing Accuracy Requirements
+
+Temporal correlation detection depends on precise timing measurement that maintains computational accuracy despite variations in signal propagation, processing delays, and environmental conditions that could affect timing relationships. Understanding timing precision requirements involves recognizing that temporal relationships carry computational meaning in temporal-analog systems, requiring timing accuracy that preserves essential correlation information while enabling reliable temporal pattern recognition.
+
+Standard timing precision operates at 1-microsecond resolution, providing temporal accuracy adequate for most computational applications while remaining achievable using current timing circuit designs and crystal oscillator technology. This precision enables temporal correlation windows from 10 microseconds to several milliseconds while maintaining correlation detection accuracy adequate for reliable temporal pattern processing.
+
+The 1-microsecond precision requirement translates to timing accuracy better than 0.1% for correlation windows spanning 1 millisecond, ensuring that temporal relationships maintain computational significance while enabling adaptive correlation window adjustment based on application requirements and environmental conditions.
+
+Timing measurement circuits utilize high-frequency crystal oscillators operating at minimum frequencies of 100 MHz to achieve 1-microsecond timing resolution while providing frequency stability better than 50 parts per million over operational temperature ranges. Crystal oscillator specifications require aging characteristics better than 5 parts per million per year to maintain timing accuracy over operational lifetime periods.
+
+Temperature compensation circuits adjust timing measurements to account for temperature-dependent crystal oscillator characteristics, maintaining timing accuracy within specification limits across operational temperature ranges despite frequency variations that result from thermal expansion and temperature-dependent oscillator characteristics.
+
+Phase-locked loop circuits may be utilized to improve timing stability and reduce phase noise characteristics that could affect temporal correlation accuracy. PLL specifications require phase noise better than -100 dBc/Hz at 1 kHz offset for standard applications, with enhanced specifications requiring phase noise better than -120 dBc/Hz for ultra-precision timing applications.
+
+Timing distribution networks must maintain timing accuracy across multiple processing elements while minimizing skew and jitter that could compromise temporal correlation detection. Distribution specifications require skew less than 100 nanoseconds between processing elements and jitter less than 10 nanoseconds RMS to preserve timing relationship accuracy.
+
+```electrical_specs
+// TAPF Timing Precision Specifications
 typedef struct {
-    uint32_t    spike_count;     // Number of spikes in pattern
-    SpikeEvent* spikes;          // Array of temporal spike events
-    float       pattern_hash;    // Fast pattern identification
-    uint32_t    usage_count;     // Adaptation tracking
-} SpikePattern;
+    float timing_resolution_us;    // Basic timing resolution
+    float timing_accuracy_percent; // Relative timing accuracy
+    float crystal_freq_hz;        // Reference crystal frequency
+    float crystal_stability_ppm;  // Frequency stability over temp
+    float crystal_aging_ppm_year; // Long-term frequency aging
+    float phase_noise_dbc_hz;     // Phase noise at 1 kHz offset
+    float distribution_skew_ns;   // Timing skew between elements
+    float timing_jitter_ns_rms;   // RMS timing jitter
+} TAPF_TimingPrecision;
+
+// Standard timing precision requirements
+static const TAPF_TimingPrecision standard_timing_specs = {
+    .timing_resolution_us = 1.0,       // 1 microsecond resolution
+    .timing_accuracy_percent = 0.1,    // ±0.1% timing accuracy
+    .crystal_freq_hz = 100000000.0,    // 100 MHz reference frequency
+    .crystal_stability_ppm = 50.0,     // 50 PPM stability over temp
+    .crystal_aging_ppm_year = 5.0,     // 5 PPM/year aging maximum
+    .phase_noise_dbc_hz = -100.0,      // -100 dBc/Hz phase noise
+    .distribution_skew_ns = 100.0,     // 100 ns maximum skew
+    .timing_jitter_ns_rms = 10.0       // 10 ns RMS jitter maximum
+};
 ```
 
-**3. Memristive Weight Array**
-```c
+### Advanced Precision Timing for Specialized Applications
+
+Enhanced timing precision operates at 100-nanosecond resolution for applications requiring superior temporal accuracy including high-frequency signal processing, precision motor control, and scientific instrumentation applications that demand exceptional timing precision for computational accuracy and measurement reliability.
+
+The enhanced precision requirement provides temporal accuracy better than 0.01% for correlation windows spanning 1 millisecond, enabling sophisticated temporal processing applications that require exceptional timing precision while maintaining computational reliability and measurement accuracy.
+
+Enhanced timing circuits utilize higher frequency crystal oscillators operating at minimum frequencies of 1 GHz to achieve 100-nanosecond timing resolution while providing frequency stability better than 10 parts per million over operational temperature ranges. Enhanced crystal specifications require temperature-compensated crystal oscillators with aging characteristics better than 1 part per million per year.
+
+Ultra-precision timing operates at 10-nanosecond resolution for specialized applications including atomic-level measurement systems, high-frequency trading platforms requiring nanosecond response times, and advanced telecommunications processing that operates at frequencies approaching fundamental limits of electronic systems.
+
+Ultra-precision timing circuits may utilize atomic frequency standards or GPS-disciplined oscillators to achieve exceptional frequency stability and timing accuracy that exceeds crystal oscillator limitations. Atomic frequency standards provide frequency stability better than 1 part in 10^12 while GPS disciplining provides long-term frequency accuracy limited only by GPS system accuracy.
+
+Phase noise requirements for ultra-precision timing specify phase noise better than -140 dBc/Hz at 1 kHz offset to maintain timing accuracy adequate for ultra-precision correlation detection and temporal pattern recognition applications requiring exceptional timing precision.
+
+Timing distribution for ultra-precision applications requires specialized techniques including matched transmission lines, temperature compensation, and active skew correction that maintain timing accuracy across multiple processing elements while minimizing environmental effects that could compromise ultra-precision timing relationships.
+
+```electrical_specs
+// TAPF Enhanced and Ultra-Precision Timing Specifications
 typedef struct {
-    float   current_weight;      // Current resistance state (0.0-1.0)
-    float   base_weight;         // Initial/reset weight value
-    float   adaptation_rate;     // Learning rate parameter
-    float   decay_constant;      // Forgetting rate parameter
-    uint32_t last_update;        // Timestamp of last modification
-    uint16_t stability_flag;     // Weight stability indicator
-} MemristorState;
+    float enhanced_resolution_ns;     // Enhanced timing resolution
+    float ultra_resolution_ns;       // Ultra-precision resolution
+    float enhanced_crystal_freq_hz;  // Enhanced reference frequency
+    float ultra_reference_stability; // Ultra-precision stability
+    float enhanced_phase_noise_dbc;  // Enhanced phase noise spec
+    float ultra_phase_noise_dbc;     // Ultra-precision phase noise
+    float enhanced_skew_ns;          // Enhanced distribution skew
+    float ultra_skew_ns;            // Ultra-precision skew
+} TAPF_AdvancedTiming;
+
+// Enhanced and ultra-precision timing requirements
+static const TAPF_AdvancedTiming advanced_timing_specs = {
+    .enhanced_resolution_ns = 100.0,      // 100 ns enhanced resolution
+    .ultra_resolution_ns = 10.0,          // 10 ns ultra-precision
+    .enhanced_crystal_freq_hz = 1.0e9,    // 1 GHz enhanced frequency
+    .ultra_reference_stability = 1.0e-12, // 1e-12 ultra stability
+    .enhanced_phase_noise_dbc = -120.0,   // -120 dBc/Hz enhanced
+    .ultra_phase_noise_dbc = -140.0,      // -140 dBc/Hz ultra
+    .enhanced_skew_ns = 10.0,             // 10 ns enhanced skew
+    .ultra_skew_ns = 1.0                  // 1 ns ultra skew
+};
 ```
 
-**4. Embedded Processing Intelligence**
-```c
+### Temporal Correlation Window Specifications
+
+Temporal correlation detection requires configurable correlation windows that enable detection of timing relationships across diverse temporal scales while maintaining computational efficiency and correlation accuracy adequate for reliable temporal pattern recognition. Understanding correlation window requirements involves recognizing that different temporal phenomena exhibit correlation characteristics across different time scales, requiring flexible correlation window configuration.
+
+Minimum correlation windows operate at 10-microsecond duration for detection of high-frequency temporal relationships and rapid temporal pattern recognition applications requiring fast response times and high temporal resolution. Minimum window specifications enable correlation detection for temporal patterns with microsecond-level timing characteristics while maintaining computational efficiency for real-time processing applications.
+
+Standard correlation windows operate from 100 microseconds to 10 milliseconds for most temporal processing applications, providing temporal correlation detection adequate for speech recognition, motor control, environmental monitoring, and adaptive learning applications that process temporal patterns with millisecond-level timing characteristics.
+
+Extended correlation windows operate up to 1 second duration for detection of long-term temporal relationships and environmental pattern recognition applications that analyze temporal patterns spanning extended time periods. Extended windows enable detection of temporal correlations in environmental data, user behavior patterns, and system adaptation that occurs over longer time scales.
+
+Adaptive correlation windows enable automatic adjustment of correlation duration based on temporal pattern characteristics and correlation strength detection. Adaptive windows start with minimum duration and extend automatically when correlation strength indicates potential temporal relationships spanning longer time periods, optimizing correlation detection while maintaining computational efficiency.
+
+Correlation threshold specifications define minimum correlation strength required for temporal relationship detection while preventing false correlations that could result from noise or unrelated temporal events. Threshold specifications require configurable sensitivity that adapts to signal strength and noise characteristics while maintaining correlation detection reliability.
+
+```electrical_specs
+// TAPF Temporal Correlation Window Specifications
 typedef struct {
-    float*   adaptive_thresholds;     // Context-dependent thresholds
-    float*   correlation_matrix;      // Spike-timing correlations  
-    uint32_t* processing_hints;       // Optimal processing strategies
-    float*   hardware_adaptations;    // Platform-specific optimizations
-    uint32_t intelligence_version;    // Intelligence format version
-} ProcessingIntelligence;
+    float min_window_us;          // Minimum correlation window
+    float max_window_ms;          // Maximum correlation window
+    float standard_window_ms;     // Standard correlation duration
+    float adaptive_min_us;        // Adaptive minimum window
+    float adaptive_max_ms;        // Adaptive maximum window
+    float correlation_threshold;  // Minimum correlation strength
+    float false_positive_rate;    // Maximum false correlation rate
+    float detection_efficiency;   // Correlation detection efficiency
+} TAPF_CorrelationWindow;
+
+// Standard correlation window specifications
+static const TAPF_CorrelationWindow correlation_window_specs = {
+    .min_window_us = 10.0,           // 10 µs minimum window
+    .max_window_ms = 1000.0,         // 1 second maximum window
+    .standard_window_ms = 1.0,       // 1 ms standard window
+    .adaptive_min_us = 50.0,         // 50 µs adaptive minimum
+    .adaptive_max_ms = 100.0,        // 100 ms adaptive maximum
+    .correlation_threshold = 0.7,    // 70% correlation threshold
+    .false_positive_rate = 0.001,    // 0.1% false positive max
+    .detection_efficiency = 0.95     // 95% detection efficiency min
+};
 ```
 
-## Core Algorithms: Starting Implementation
+## Memristive Weight Storage Electrical Specifications
 
-### Algorithm 1: Spike-Timing Dependent Processing (STDP)
+### Resistance Range and Precision Standards
 
-```c
-// Core temporal learning algorithm
-void stdp_update(MemristorState* synapse, float pre_spike_time, float post_spike_time) {
-    float time_diff = post_spike_time - pre_spike_time;
-    float weight_change = 0.0;
-    
-    if (time_diff > 0 && time_diff < STDP_WINDOW) {
-        // Pre-synaptic spike before post-synaptic (strengthen)
-        weight_change = LEARNING_RATE * exp(-time_diff / TAU_PLUS);
-    } else if (time_diff < 0 && abs(time_diff) < STDP_WINDOW) {
-        // Post-synaptic spike before pre-synaptic (weaken)
-        weight_change = -LEARNING_RATE * exp(abs(time_diff) / TAU_MINUS);
-    }
-    
-    // Update memristor weight with bounds checking
-    synapse->current_weight += weight_change;
-    synapse->current_weight = clamp(synapse->current_weight, 0.0, 1.0);
-    synapse->last_update = get_current_time_us();
-}
+Memristive weight storage requires precise resistance control that enables reliable analog weight representation while providing modification capability adequate for adaptive learning and computational optimization. Understanding memristive requirements involves recognizing that resistance values carry computational meaning through their analog state, requiring precision and stability characteristics that maintain computational accuracy while enabling controlled adaptation.
+
+Standard resistance range operates from 1 kilohm to 100 kilohms, providing two orders of magnitude variation that enables precise weight representation with 14-bit equivalent precision across the resistance range. This range accommodates current memristive technology capabilities while providing computational precision adequate for sophisticated adaptive learning and optimization applications.
+
+The resistance range enables weight representation with precision equivalent to approximately 0.006% of full-scale resistance variation, providing computational weight accuracy that exceeds most adaptive learning requirements while maintaining practical implementation using current memristive materials and control circuit technology.
+
+Resistance measurement accuracy requires precision better than 0.1% of actual resistance values across the operational resistance range, ensuring computational weight accuracy adequate for reliable adaptive processing while maintaining measurement repeatability necessary for computational stability and learning effectiveness.
+
+Advanced precision requirements may specify resistance measurement accuracy better than 0.01% for applications requiring exceptional adaptive precision or scientific measurement accuracy. Enhanced precision measurement utilizes specialized resistance measurement techniques including kelvin sensing and temperature compensation that minimize measurement errors and maintain accuracy despite environmental variations.
+
+Resistance modification precision requires controlled resistance changes with accuracy matching measurement precision while providing modification resolution adequate for fine-tuned adaptive learning. Standard modification resolution achieves resistance changes as small as 0.1% of current resistance values, enabling gradual adaptive learning that maintains computational stability while providing optimization capability.
+
+Temperature stability requirements specify resistance variation characteristics that maintain weight accuracy across operational temperature ranges while providing predictable temperature coefficients that enable temperature compensation when required for enhanced accuracy. Standard temperature coefficient specifications limit resistance changes to less than 100 parts per million per degree Celsius across operational temperature ranges.
+
+```electrical_specs
+// TAPF Memristive Resistance Specifications
+typedef struct {
+    float resistance_min_ohms;       // Minimum resistance value
+    float resistance_max_ohms;       // Maximum resistance value
+    float resistance_precision_percent; // Measurement precision
+    float modification_resolution_percent; // Modification resolution
+    float temperature_coeff_ppm_c;   // Temperature coefficient
+    float stability_percent_year;    // Long-term stability
+    float measurement_accuracy_percent; // Absolute accuracy
+    float modification_speed_us;     // Modification time
+} TAPF_MemristiveSpecs;
+
+// Standard memristive resistance specifications
+static const TAPF_MemristiveSpecs memristive_specs = {
+    .resistance_min_ohms = 1000.0,          // 1 kΩ minimum resistance
+    .resistance_max_ohms = 100000.0,        // 100 kΩ maximum resistance
+    .resistance_precision_percent = 0.1,     // 0.1% measurement precision
+    .modification_resolution_percent = 0.1,  // 0.1% modification resolution
+    .temperature_coeff_ppm_c = 100.0,       // 100 PPM/°C temperature drift
+    .stability_percent_year = 1.0,          // 1% per year stability
+    .measurement_accuracy_percent = 0.1,     // 0.1% absolute accuracy
+    .modification_speed_us = 10.0           // 10 µs modification time
+};
 ```
 
-### Algorithm 2: Temporal Pattern Matching
+### Weight Persistence and Data Retention
 
-```c
-// Adaptive pattern recognition using temporal correlations
-float temporal_pattern_match(SpikePattern* input, SpikePattern* stored) {
-    float correlation_sum = 0.0;
-    float weight_sum = 0.0;
-    
-    for (int i = 0; i < min(input->spike_count, stored->spike_count); i++) {
-        float time_diff = fabs(input->spikes[i].timestamp - stored->spikes[i].timestamp);
-        float amplitude_correlation = input->spikes[i].amplitude * stored->spikes[i].amplitude;
-        
-        // Gaussian temporal correlation
-        float temporal_correlation = exp(-(time_diff * time_diff) / (2 * TEMPORAL_SIGMA * TEMPORAL_SIGMA));
-        
-        correlation_sum += amplitude_correlation * temporal_correlation;
-        weight_sum += 1.0;
-    }
-    
-    return (weight_sum > 0) ? correlation_sum / weight_sum : 0.0;
-}
+Computational weight storage requires resistance persistence that maintains weight values without continuous power consumption while providing data retention characteristics adequate for preserving learned adaptations across power cycles and extended storage periods. Understanding persistence requirements involves recognizing that memristive elements must maintain their computational state without energy consumption while providing reliable data retention for practical deployment scenarios.
+
+Data retention specifications require resistance values to remain within 1% of programmed values for minimum periods of 10 years under standard storage conditions, ensuring that learned adaptations persist across operational lifetime while maintaining computational accuracy adequate for continued adaptive processing.
+
+Temperature cycling specifications require data retention across temperature excursions from minimum to maximum operational temperatures while maintaining resistance accuracy within specification limits despite thermal stress that could affect memristive element characteristics. Standard thermal cycling requirements specify operation through minimum quantities of 1000 temperature cycles from -40°C to +85°C.
+
+Humidity tolerance specifications require data retention despite humidity exposure up to 95% relative humidity non-condensing across operational temperature ranges, ensuring reliable operation in diverse environmental conditions without degradation of computational weight storage capability.
+
+Power cycling endurance requires data retention through minimum quantities of 10,000 power cycling events while maintaining resistance accuracy and modification capability adequate for continued adaptive processing. Power cycling specifications ensure reliable operation in applications with frequent power cycling while preventing degradation of weight storage reliability.
+
+Extended storage specifications require data retention for minimum periods of 20 years under controlled storage conditions, enabling applications with extended operational lifetime requirements or long-term storage between operational periods. Extended storage requirements ensure that computational weights maintain their values during extended non-operational periods.
+
+Data integrity verification procedures enable detection of resistance drift or degradation that could compromise computational accuracy while providing error correction capability for critical applications requiring high reliability. Verification procedures include periodic resistance measurement and comparison with expected values to detect potential degradation before it affects computational performance.
+
+```electrical_specs
+// TAPF Memristive Persistence Specifications
+typedef struct {
+    float retention_years;           // Data retention period
+    float retention_accuracy_percent; // Retention accuracy requirement
+    int thermal_cycles_min;         // Minimum thermal cycling
+    float humidity_tolerance_percent; // Humidity tolerance
+    int power_cycles_min;           // Minimum power cycling
+    float extended_storage_years;   // Extended storage capability
+    float verification_interval_hours; // Verification check interval
+    float correction_capability_percent; // Error correction range
+} TAPF_MemristivePersistence;
+
+// Standard memristive persistence requirements
+static const TAPF_MemristivePersistence persistence_specs = {
+    .retention_years = 10.0,             // 10 year retention minimum
+    .retention_accuracy_percent = 1.0,    // 1% retention accuracy
+    .thermal_cycles_min = 1000,          // 1000 thermal cycles
+    .humidity_tolerance_percent = 95.0,   // 95% RH tolerance
+    .power_cycles_min = 10000,           // 10k power cycles
+    .extended_storage_years = 20.0,      // 20 year storage
+    .verification_interval_hours = 168.0, // Weekly verification
+    .correction_capability_percent = 5.0  // 5% correction range
+};
 ```
 
-### Algorithm 3: Adaptive Threshold Computation
+### Weight Modification Control and Programming
 
-```c
-// Dynamic threshold adaptation based on temporal history
-float compute_adaptive_threshold(ProcessingIntelligence* intel, SpikePattern* context) {
-    float base_threshold = intel->adaptive_thresholds[0];
-    float context_modifier = 0.0;
-    
-    // Analyze recent temporal patterns
-    for (int i = 0; i < context->spike_count - 1; i++) {
-        float inter_spike_interval = context->spikes[i+1].timestamp - context->spikes[i].timestamp;
-        
-        // Shorter intervals increase sensitivity (lower threshold)
-        if (inter_spike_interval < FAST_PATTERN_THRESHOLD) {
-            context_modifier -= 0.1;
-        }
-        // Longer intervals decrease sensitivity (higher threshold)  
-        else if (inter_spike_interval > SLOW_PATTERN_THRESHOLD) {
-            context_modifier += 0.1;
-        }
-    }
-    
-    float adaptive_threshold = base_threshold + context_modifier;
-    return clamp(adaptive_threshold, MIN_THRESHOLD, MAX_THRESHOLD);
-}
+Memristive weight modification requires precise voltage and current control that enables accurate resistance changes while preventing damage that could compromise element reliability or computational accuracy. Understanding modification control involves recognizing that programming characteristics determine adaptive learning capability while programming reliability ensures long-term computational stability.
+
+Programming voltage specifications define voltage ranges and current limits required for controlled resistance modification while maintaining element reliability across operational lifetime. Standard programming voltages operate from 1.0 volts to 8.0 volts depending on memristive element technology, with current limiting to prevent damage during modification operations.
+
+Programming pulse specifications require precise control of voltage application duration with timing accuracy better than 1% of programmed pulse width, ensuring repeatable resistance modifications that enable predictable weight updates during adaptive processing. Programming pulse shapes utilize controlled rise and fall times that optimize modification characteristics while minimizing stress on memristive elements.
+
+Programming verification procedures require resistance measurement immediately following modification operations to confirm successful weight updates while providing error detection and retry capability for failed programming operations. Verification enables detection of programming failures before they affect computational accuracy while providing correction procedures that maintain computational reliability.
+
+Endurance specifications require memristive elements to withstand minimum quantities of 1 million modification cycles while maintaining resistance precision and programming reliability adequate for continued adaptive processing. Enhanced endurance applications may require 100 million modification cycles for applications with frequent weight updates, while specialized applications may accept reduced endurance to 100,000 cycles for applications with infrequent weight modifications.
+
+Programming algorithm optimization enables efficient weight modification that minimizes programming time and power consumption while maximizing programming reliability and resistance precision. Optimization algorithms may utilize iterative programming and verification procedures that achieve precise resistance values while maintaining programming efficiency.
+
+Over-programming protection prevents excessive voltage or current application that could damage memristive elements while maintaining programming capability adequate for required resistance changes. Protection circuits monitor programming current and voltage while providing automatic termination of programming operations that exceed safe operating limits.
+
+```electrical_specs
+// TAPF Memristive Programming Specifications
+typedef struct {
+    float programming_voltage_min;   // Minimum programming voltage
+    float programming_voltage_max;   // Maximum programming voltage
+    float programming_current_max;   // Maximum programming current
+    float pulse_width_accuracy_percent; // Pulse timing accuracy
+    float rise_time_ns;             // Programming pulse rise time
+    float fall_time_ns;             // Programming pulse fall time
+    int endurance_cycles_min;       // Minimum endurance cycles
+    float verification_accuracy_percent; // Programming verification
+    float programming_power_uw;     // Programming power consumption
+} TAPF_MemristiveProgramming;
+
+// Standard memristive programming specifications
+static const TAPF_MemristiveProgramming programming_specs = {
+    .programming_voltage_min = 1.0,     // 1V minimum programming
+    .programming_voltage_max = 8.0,     // 8V maximum programming
+    .programming_current_max = 100.0,   // 100 µA current limit
+    .pulse_width_accuracy_percent = 1.0, // 1% pulse timing accuracy
+    .rise_time_ns = 100.0,              // 100 ns rise time
+    .fall_time_ns = 100.0,              // 100 ns fall time
+    .endurance_cycles_min = 1000000,    // 1M cycles minimum
+    .verification_accuracy_percent = 0.5, // 0.5% verification accuracy
+    .programming_power_uw = 10.0        // 10 µW programming power
+};
 ```
 
-### Algorithm 4: Hardware-Adaptive Processing
+## Power Consumption and Energy Efficiency Standards
 
-```c
-// Adapt processing strategy based on available hardware capabilities
-ProcessingStrategy select_processing_strategy(HardwareCapabilities* hw, ProcessingIntelligence* intel) {
-    ProcessingStrategy strategy;
-    
-    if (hw->has_parallel_processors && hw->memory_bandwidth > HIGH_BANDWIDTH_THRESHOLD) {
-        // High-end hardware: full parallel temporal processing
-        strategy.mode = PARALLEL_TEMPORAL;
-        strategy.spike_buffer_size = LARGE_BUFFER_SIZE;
-        strategy.correlation_window = FULL_CORRELATION_WINDOW;
-        
-    } else if (hw->has_limited_memory) {
-        // Embedded hardware: streaming temporal processing
-        strategy.mode = STREAMING_TEMPORAL;
-        strategy.spike_buffer_size = SMALL_BUFFER_SIZE;
-        strategy.correlation_window = REDUCED_CORRELATION_WINDOW;
-        
-    } else {
-        // Standard hardware: balanced temporal processing
-        strategy.mode = BALANCED_TEMPORAL;
-        strategy.spike_buffer_size = MEDIUM_BUFFER_SIZE;
-        strategy.correlation_window = STANDARD_CORRELATION_WINDOW;
-    }
-    
-    // Apply intelligence-guided optimizations
-    strategy.threshold_adaptation = intel->hardware_adaptations[hw->hardware_type];
-    strategy.memory_strategy = intel->processing_hints[MEMORY_OPTIMIZATION];
-    
-    return strategy;
-}
+### Event-Driven Power Management Architecture
+
+Temporal-analog processing achieves superior energy efficiency through event-driven operation that consumes power only during computational activity rather than maintaining continuous power consumption regardless of computational workload. Understanding event-driven power efficiency requires recognizing that power consumption should scale directly with computational activity while maintaining instant responsiveness when processing is required.
+
+Baseline power consumption occurs when processors maintain readiness for computational activity while minimizing power consumption during periods without active temporal processing. Baseline power includes power required for timing references, bias circuits, voltage references, and monitoring functions that maintain processor readiness while avoiding power consumption for inactive computational elements.
+
+Standard baseline power consumption specifications require quiescent power less than 10 milliwatts for basic temporal-analog processors while maintaining response time less than 1 microsecond when computational activity resumes. The baseline power budget allocates approximately 2 milliwatts for crystal oscillator and timing circuits, 3 milliwatts for voltage references and bias circuits, 2 milliwatts for monitoring and control functions, and 3 milliwatts for environmental energy harvesting interface circuits when present.
+
+Advanced low-power configurations achieve baseline power consumption less than 1 milliwatt for battery-powered applications while maintaining adequate response characteristics for application requirements. Low-power optimization utilizes specialized circuit designs including ultra-low-power voltage references, duty-cycled timing circuits, and power-gated unused circuits that minimize baseline power while preserving essential functionality.
+
+Power scaling specifications require power consumption to increase proportionally with computational activity while maintaining energy efficiency advantages compared to traditional processors that maintain constant power consumption regardless of computational workload. Active processing power includes additional power for spike generation, amplitude control, memristive weight access, temporal correlation analysis, and adaptive learning operations.
+
+Spike processing power consumption averages less than 100 nanojoules per spike for standard temporal processing while maintaining timing accuracy and amplitude precision within specification limits. Spike processing efficiency utilizes specialized circuit designs optimized for temporal event detection and correlation analysis that minimize power consumption per computational operation.
+
+Memristive weight access power averages less than 1 microjoule per weight access operation including resistance measurement and modification while maintaining accuracy and speed specifications required for adaptive processing. Weight access efficiency utilizes optimized programming algorithms and circuit designs that minimize power consumption during weight updates while maintaining programming reliability.
+
+```electrical_specs
+// TAPF Power Consumption Specifications
+typedef struct {
+    float baseline_power_mw;        // Quiescent power consumption
+    float response_time_us;         // Wake-up response time
+    float spike_energy_nj;          // Energy per spike operation
+    float weight_access_energy_uj;  // Energy per weight access
+    float correlation_energy_nj;    // Energy per correlation
+    float adaptation_energy_uj;     // Energy per adaptation cycle
+    float power_scaling_factor;     // Power vs activity scaling
+    float efficiency_vs_binary;     // Efficiency vs binary systems
+} TAPF_PowerConsumption;
+
+// Standard power consumption specifications
+static const TAPF_PowerConsumption power_specs = {
+    .baseline_power_mw = 10.0,          // 10 mW baseline power
+    .response_time_us = 1.0,            // 1 µs response time
+    .spike_energy_nj = 100.0,           // 100 nJ per spike
+    .weight_access_energy_uj = 1.0,     // 1 µJ per weight access
+    .correlation_energy_nj = 500.0,     // 500 nJ per correlation
+    .adaptation_energy_uj = 5.0,        // 5 µJ per adaptation
+    .power_scaling_factor = 0.95,       // 95% linear scaling
+    .efficiency_vs_binary = 50.0        // 50x efficiency improvement
+};
 ```
+
+### Environmental Energy Harvesting Integration
+
+Environmental energy harvesting provides supplemental power generation that enables energy-independent operation while demonstrating how temporal-analog processing can work naturally with environmental energy flows. Understanding energy harvesting integration requires recognizing that environmental energy sources provide both power generation opportunity and computational input that can be utilized simultaneously through unified system design.
+
+Thermoelectric energy harvesting utilizes temperature differential converters that generate electrical power from thermal gradients while potentially providing thermal information for environmental monitoring applications. Thermoelectric specifications require minimum temperature differentials of 5°C for useful power generation while achieving conversion efficiency adequate for processor power requirements.
+
+Standard thermoelectric power generation achieves 5 milliwatts per square centimeter of thermoelectric area with temperature differentials of 10°C while maintaining conversion efficiency above 3% of theoretical Carnot efficiency limits. Enhanced thermoelectric designs may achieve higher power densities through advanced thermoelectric materials and optimized thermal management techniques.
+
+Vibration energy harvesting utilizes electromagnetic or piezoelectric converters that generate electrical power from mechanical motion while potentially providing motion information for environmental monitoring applications. Vibration harvesting specifications require minimum vibration amplitudes of 0.5G at resonant frequencies for useful power generation while achieving conversion efficiency adequate for processor operation.
+
+Electromagnetic vibration harvesting achieves 1 milliwatt per cubic centimeter of harvester volume with vibration amplitudes of 1G at resonant frequencies while maintaining conversion efficiency above 40% of theoretical limits for electromagnetic energy conversion. Piezoelectric vibration harvesting may achieve similar power densities with different frequency response characteristics and mechanical integration requirements.
+
+Photovoltaic energy harvesting provides power generation under illumination conditions while potentially providing light intensity information for environmental monitoring applications. Photovoltaic specifications require minimum illumination levels of 100 lux for useful power generation while achieving conversion efficiency adequate for low-power processor operation.
+
+Standard photovoltaic power generation achieves 100 microwatts per square centimeter under indoor illumination conditions of 500 lux while maintaining conversion efficiency above 10% of incident light energy. Outdoor photovoltaic operation may achieve 10 milliwatts per square centimeter under bright sunlight conditions.
+
+```electrical_specs
+// TAPF Environmental Energy Harvesting Specifications
+typedef struct {
+    // Thermoelectric harvesting specifications
+    float thermal_min_delta_c;      // Minimum temperature differential
+    float thermal_power_mw_cm2;     // Power density per area
+    float thermal_efficiency_percent; // Conversion efficiency
+    
+    // Vibration harvesting specifications  
+    float vibration_min_g;          // Minimum vibration amplitude
+    float vibration_power_mw_cm3;   // Power density per volume
+    float vibration_efficiency_percent; // Conversion efficiency
+    
+    // Photovoltaic harvesting specifications
+    float photovoltaic_min_lux;     // Minimum illumination
+    float photovoltaic_power_uw_cm2; // Power density per area
+    float photovoltaic_efficiency_percent; // Conversion efficiency
+    
+    // Integration specifications
+    float harvesting_regulation_efficiency; // Power regulation efficiency
+    float energy_storage_capacity_mj; // Energy storage capability
+    float harvesting_priority_threshold; // Harvesting vs battery priority
+} TAPF_EnergyHarvesting;
+
+// Standard energy harvesting specifications
+static const TAPF_EnergyHarvesting harvesting_specs = {
+    .thermal_min_delta_c = 5.0,            // 5°C minimum thermal delta
+    .thermal_power_mw_cm2 = 5.0,           // 5 mW/cm² thermal power
+    .thermal_efficiency_percent = 3.0,      // 3% thermal efficiency
+    
+    .vibration_min_g = 0.5,                // 0.5G minimum vibration
+    .vibration_power_mw_cm3 = 1.0,         // 1 mW/cm³ vibration power
+    .vibration_efficiency_percent = 40.0,   // 40% vibration efficiency
+    
+    .photovoltaic_min_lux = 100.0,         // 100 lux minimum light
+    .photovoltaic_power_uw_cm2 = 100.0,    // 100 µW/cm² PV power
+    .photovoltaic_efficiency_percent = 10.0, // 10% PV efficiency
+    
+    .harvesting_regulation_efficiency = 85.0, // 85% regulation efficiency
+    .energy_storage_capacity_mj = 1.0,      // 1 mJ storage capacity
+    .harvesting_priority_threshold = 0.8    // 80% harvesting priority
+};
+```
+
+### Power Supply Design and Distribution Requirements
+
+Power supply systems for temporal-analog processing must provide stable voltage references while supporting event-driven power consumption patterns and environmental energy harvesting integration. Understanding power supply requirements involves recognizing that temporal-analog processing places different demands on power systems compared to traditional digital processors that maintain constant power consumption.
+
+Voltage regulation specifications require supply voltage stability within 0.5% of nominal values despite load current variations that result from event-driven processing activity while maintaining regulation response time within 1 microsecond to prevent voltage droops during computational activity transitions. Multiple voltage domains optimize power consumption for different circuit functions including digital logic, analog processing, memristive element operation, and environmental energy harvesting.
+
+Primary supply voltage operates at 12 volts to support amplitude control and sensor interface requirements while providing adequate voltage margin for regulation circuits and environmental energy harvesting integration. Secondary supply voltages include 5 volts for digital logic circuits, 3.3 volts for low-voltage analog circuits, and ±15 volts for precision analog processing when required.
+
+Power distribution networks require low-impedance distribution that maintains voltage accuracy at computational elements while minimizing power loss in distribution resistance and providing adequate current handling capability for peak computational loading conditions. Distribution design addresses both steady-state current requirements and transient current demands during computational activity changes.
+
+Current capacity specifications require power supplies to provide peak currents up to 10 times average current consumption during maximum computational activity while maintaining voltage regulation within specification limits. Current capacity planning addresses worst-case computational loading scenarios while providing adequate margin for environmental energy harvesting and battery charging operations.
+
+Power supply efficiency specifications require overall efficiency better than 85% from input power to delivered computational power while maintaining efficiency above 70% across the full range of load conditions from minimum baseline power to maximum computational activity. Efficiency optimization utilizes switching converter designs with adaptive operation that maintains high efficiency across varying load conditions.
+
+Environmental energy integration requires power management circuits that automatically switch between environmental energy sources, battery power, and external power supplies based on availability and power requirements. Integration circuits provide seamless power source transitions while maintaining computational operation and protecting against power source failures or environmental energy interruptions.
+
+```electrical_specs
+// TAPF Power Supply and Distribution Specifications
+typedef struct {
+    // Voltage regulation specifications
+    float primary_voltage;          // Primary supply voltage
+    float regulation_accuracy_percent; // Voltage regulation accuracy
+    float regulation_response_us;   // Regulation response time
+    float secondary_5v_tolerance;   // 5V supply tolerance
+    float secondary_3v3_tolerance;  // 3.3V supply tolerance
+    
+    // Current capacity specifications
+    float average_current_ma;       // Average current consumption
+    float peak_current_ma;          // Peak current capability
+    float current_capacity_margin;  // Current capacity margin
+    
+    // Distribution specifications
+    float distribution_impedance_ohms; // Distribution network impedance
+    float voltage_drop_max_mv;      // Maximum voltage drop
+    float distribution_efficiency_percent; // Distribution efficiency
+    
+    // Power management specifications
+    float supply_efficiency_percent; // Overall supply efficiency
+    float switching_time_us;        // Power source switching time
+    float power_source_priority;    // Source selection priority
+} TAPF_PowerSupply;
+
+// Standard power supply specifications
+static const TAPF_PowerSupply power_supply_specs = {
+    .primary_voltage = 12.0,             // 12V primary supply
+    .regulation_accuracy_percent = 0.5,   // ±0.5% regulation accuracy
+    .regulation_response_us = 1.0,        // 1 µs regulation response
+    .secondary_5v_tolerance = 0.25,       // ±0.25V tolerance on 5V
+    .secondary_3v3_tolerance = 0.165,     // ±0.165V tolerance on 3.3V
+    
+    .average_current_ma = 50.0,          // 50 mA average current
+    .peak_current_ma = 500.0,            // 500 mA peak current
+    .current_capacity_margin = 2.0,      // 2x current capacity margin
+    
+    .distribution_impedance_ohms = 0.1,   // 0.1Ω distribution impedance
+    .voltage_drop_max_mv = 50.0,         // 50 mV maximum voltage drop
+    .distribution_efficiency_percent = 95.0, // 95% distribution efficiency
+    
+    .supply_efficiency_percent = 85.0,   // 85% supply efficiency
+    .switching_time_us = 10.0,           // 10 µs source switching
+    .power_source_priority = 1.0         // Environmental > Battery > External
+};
+```
+
+## Signal Integrity and Electromagnetic Compatibility
+
+### Electrical Noise Immunity and Signal Quality
+
+Signal integrity for temporal-analog processing requires exceptional noise immunity that preserves timing relationships and amplitude accuracy despite electrical interference sources that could compromise computational precision. Understanding noise immunity requirements involves recognizing that temporal-analog processing depends on both timing accuracy and amplitude precision, requiring comprehensive noise control that maintains computational reliability in practical deployment environments.
+
+Conducted noise immunity specifications require processor operation without degradation during conducted electrical noise on power supply lines, signal inputs, and ground connections that may result from switching power supplies, motor drives, or other electrical equipment in the deployment environment. Conducted noise immunity testing utilizes standardized test procedures including power line disturbance testing and signal line interference testing.
+
+Power supply noise rejection requires continued operation during power supply voltage variations up to ±10% around nominal values while maintaining computational accuracy within specification limits. Power supply rejection ratios must exceed 60 dB for noise frequencies up to 10 MHz to ensure computational stability despite switching converter noise and other power supply disturbances.
+
+Signal line noise immunity requires continued operation during common mode noise up to 1000 volts per meter electric field strength and differential mode noise up to 100 millivolts on signal inputs while maintaining timing accuracy and amplitude precision within specification limits. Signal line protection utilizes filtering, shielding, and isolation techniques that maintain signal integrity while providing noise immunity.
+
+Radiated electromagnetic immunity requires continued operation during radiated electromagnetic fields up to 10 volts per meter field strength across frequency ranges from 80 MHz to 1 GHz while maintaining computational accuracy and timing precision within specification limits. Radiated immunity testing follows standardized electromagnetic compatibility procedures including anechoic chamber testing and field strength measurement.
+
+Ground system design requirements specify ground distribution networks that minimize ground loop interference while providing adequate current handling capability for computational loading and electromagnetic interference mitigation. Ground system design includes separation of analog and digital ground systems with single-point connections that minimize interference between different circuit functions.
+
+Filtering and protection specifications require input filtering that attenuates noise while maintaining signal bandwidth adequate for temporal processing and protection circuits that prevent damage from electrostatic discharge, overvoltage conditions, and reverse polarity application. Protection circuits must operate without affecting normal signal processing while providing adequate protection against practical deployment hazards.
+
+```electrical_specs
+// TAPF Signal Integrity and Noise Immunity Specifications
+typedef struct {
+    // Conducted noise immunity
+    float power_supply_noise_rejection_db; // Power supply noise rejection
+    float common_mode_noise_immunity_v_m;  // Common mode noise immunity
+    float differential_noise_immunity_mv;  // Differential noise immunity
+    
+    // Radiated immunity
+    float radiated_immunity_v_m;           // Radiated field immunity
+    float frequency_range_min_mhz;         // Minimum test frequency
+    float frequency_range_max_ghz;         // Maximum test frequency
+    
+    // Signal quality preservation
+    float timing_jitter_degradation_percent; // Timing degradation limit
+    float amplitude_accuracy_degradation_percent; // Amplitude degradation
+    
+    // Protection specifications
+    float esd_protection_kv;               // ESD protection level
+    float overvoltage_protection_v;        // Overvoltage protection
+    float reverse_polarity_protection;     // Reverse polarity protection
+} TAPF_SignalIntegrity;
+
+// Standard signal integrity specifications
+static const TAPF_SignalIntegrity signal_integrity_specs = {
+    .power_supply_noise_rejection_db = 60.0,    // 60 dB power supply rejection
+    .common_mode_noise_immunity_v_m = 1000.0,   // 1000 V/m common mode immunity
+    .differential_noise_immunity_mv = 100.0,    // 100 mV differential immunity
+    
+    .radiated_immunity_v_m = 10.0,              // 10 V/m radiated immunity
+    .frequency_range_min_mhz = 80.0,            // 80 MHz minimum frequency
+    .frequency_range_max_ghz = 1.0,             // 1 GHz maximum frequency
+    
+    .timing_jitter_degradation_percent = 1.0,   // 1% timing degradation max
+    .amplitude_accuracy_degradation_percent = 0.5, // 0.5% amplitude degradation
+    
+    .esd_protection_kv = 8.0,                   // 8 kV ESD protection
+    .overvoltage_protection_v = 24.0,           // 24V overvoltage protection
+    .reverse_polarity_protection = 1           // Reverse polarity protected
+};
+```
+
+### Electromagnetic Emissions Control
+
+Electromagnetic emissions control ensures that temporal-analog processors operate without interfering with other electronic equipment while maintaining compliance with regulatory requirements for electromagnetic compatibility. Understanding emissions control involves recognizing that temporal processing circuits may generate electromagnetic emissions through spike processing and switching operations while requiring emissions control that maintains regulatory compliance.
+
+Conducted emissions specifications limit electromagnetic energy conducted through power supply lines and signal connections to levels that comply with regulatory requirements while maintaining processor performance and computational capability. Conducted emissions testing utilizes standardized measurement procedures including line impedance stabilization networks and calibrated measurement receivers.
+
+Radiated emissions specifications limit electromagnetic energy radiated through electromagnetic fields to levels that comply with regulatory requirements for electronic equipment while maintaining processor performance and temporal processing capability. Radiated emissions testing utilizes standardized measurement procedures including anechoic chamber testing and calibrated antennas.
+
+Clock emission control addresses electromagnetic emissions that result from timing circuits and crystal oscillators while maintaining timing accuracy and precision required for temporal processing. Clock emission control utilizes techniques including spread spectrum clocking, careful layout design, and shielding that reduce electromagnetic emissions while preserving timing precision.
+
+Switching circuit emission control addresses electromagnetic emissions that result from power supply switching, amplitude control switching, and memristive programming operations while maintaining operational capability and efficiency. Switching emission control utilizes techniques including filtered switching, soft switching, and electromagnetic shielding.
+
+Layout and shielding specifications require printed circuit board designs that minimize electromagnetic emissions while providing adequate shielding for sensitive circuits and maintaining signal integrity for temporal processing. Layout specifications include ground plane design, trace routing, and component placement that optimize electromagnetic compatibility.
+
+Filtering requirements specify electromagnetic filters that attenuate emissions while maintaining signal bandwidth and operational capability. Filter specifications include power supply filtering, signal line filtering, and clock distribution filtering that provide emissions control while preserving essential signal characteristics.
+
+```electrical_specs
+// TAPF Electromagnetic Emissions Control Specifications
+typedef struct {
+    // Conducted emissions limits
+    float conducted_emissions_dbmv_150khz; // 150 kHz conducted limit
+    float conducted_emissions_dbmv_30mhz;  // 30 MHz conducted limit
+    
+    // Radiated emissions limits  
+    float radiated_emissions_dbuv_m_30mhz;  // 30 MHz radiated limit
+    float radiated_emissions_dbuv_m_1ghz;   // 1 GHz radiated limit
+    
+    // Clock and switching emissions
+    float clock_emission_reduction_db;     // Clock emission reduction
+    float switching_emission_reduction_db; // Switching emission reduction
+    
+    // Shielding and filtering effectiveness
+    float shielding_effectiveness_db;      // Shielding effectiveness
+    float filter_attenuation_db;          // Filter attenuation
+    
+    // Regulatory compliance
+    int fcc_part_15_compliance;           // FCC Part 15 compliance
+    int ce_compliance;                    // CE marking compliance
+    int iec_cispr_compliance;             // IEC CISPR compliance
+} TAPF_EmissionsControl;
+
+// Standard electromagnetic emissions specifications
+static const TAPF_EmissionsControl emissions_specs = {
+    .conducted_emissions_dbmv_150khz = 66.0,  // 66 dBμV conducted at 150 kHz
+    .conducted_emissions_dbmv_30mhz = 56.0,   // 56 dBμV conducted at 30 MHz
+    
+    .radiated_emissions_dbuv_m_30mhz = 40.0,  // 40 dBμV/m radiated at 30 MHz  
+    .radiated_emissions_dbuv_m_1ghz = 47.0,   // 47 dBμV/m radiated at 1 GHz
+    
+    .clock_emission_reduction_db = 20.0,      // 20 dB clock emission reduction
+    .switching_emission_reduction_db = 30.0,  // 30 dB switching reduction
+    
+    .shielding_effectiveness_db = 40.0,       // 40 dB shielding effectiveness
+    .filter_attenuation_db = 40.0,           // 40 dB filter attenuation
+    
+    .fcc_part_15_compliance = 1,             // FCC Part 15 compliant
+    .ce_compliance = 1,                      // CE compliant
+    .iec_cispr_compliance = 1                // IEC CISPR compliant
+};
+```
+
+## Environmental Operating Conditions and Reliability
+
+### Temperature, Humidity, and Mechanical Specifications
+
+Environmental operating specifications ensure reliable temporal-analog processing across environmental conditions encountered in practical deployment scenarios while maintaining computational accuracy and system reliability despite temperature variations, humidity exposure, and mechanical stress. Understanding environmental requirements involves recognizing that temporal-analog processing precision may be more sensitive to environmental variations compared to digital systems while requiring environmental specifications that enable practical deployment.
+
+Temperature operating specifications define operational temperature ranges that maintain computational accuracy while providing adequate reliability margins for diverse deployment environments. Standard commercial temperature range operates from -10°C to +70°C for indoor applications while maintaining computational accuracy within specification limits across the entire temperature range.
+
+Extended temperature range operates from -40°C to +85°C for outdoor and automotive applications that may encounter more extreme temperature conditions while maintaining computational stability and reliability adequate for practical deployment. Industrial temperature range operates from -40°C to +125°C for harsh industrial environments including process control and manufacturing applications.
+
+Temperature stability specifications limit computational parameter variations across operational temperature ranges while providing temperature compensation when required for enhanced accuracy. Temperature coefficient specifications require timing accuracy variations less than 50 parts per million per degree Celsius and amplitude accuracy variations less than 0.01% per degree Celsius across operational temperature ranges.
+
+Humidity specifications require operation without degradation at relative humidity levels up to 95% non-condensing across operational temperature ranges while maintaining computational accuracy and system reliability. Humidity tolerance addresses moisture absorption effects on electrical characteristics while providing protection against condensation that could cause electrical failures.
+
+Contamination tolerance specifications require continued operation despite typical airborne contaminants including dust, salt spray, and chemical vapors that may be encountered in industrial or outdoor deployment scenarios. Contamination tolerance addresses both particulate contamination and chemical contamination that could affect electrical performance or system reliability.
+
+Mechanical stress specifications define allowable mechanical loading including shock, vibration, and thermal cycling that maintain computational accuracy and system reliability while providing adequate margin for practical deployment scenarios. Shock specifications require continued operation during mechanical shock up to 50G acceleration for 11 milliseconds while vibration specifications require operation during sinusoidal vibration up to 5G acceleration across frequency ranges from 10 Hz to 500 Hz.
+
+```electrical_specs
+// TAPF Environmental Operating Specifications
+typedef struct {
+    // Temperature specifications
+    float temperature_min_c;              // Minimum operating temperature
+    float temperature_max_c;              // Maximum operating temperature
+    float temperature_coeff_timing_ppm_c; // Timing temperature coefficient
+    float temperature_coeff_amplitude_percent_c; // Amplitude temperature coeff
+    
+    // Humidity and contamination
+    float humidity_max_percent_rh;        // Maximum relative humidity
+    float contamination_tolerance_level;   // Contamination tolerance
+    
+    // Mechanical specifications
+    float shock_max_g;                    // Maximum shock acceleration
+    float shock_duration_ms;              // Shock duration
+    float vibration_max_g;                // Maximum vibration acceleration
+    float vibration_freq_min_hz;          // Minimum vibration frequency
+    float vibration_freq_max_hz;          // Maximum vibration frequency
+    
+    // Thermal cycling
+    int thermal_cycles_min;               // Minimum thermal cycling
+    float thermal_cycle_rate_c_min;       // Thermal cycling rate
+    
+    // Reliability specifications
+    float mtbf_hours;                     // Mean time between failures
+    float operational_lifetime_years;     // Operational lifetime
+} TAPF_EnvironmentalSpecs;
+
+// Standard environmental operating specifications
+static const TAPF_EnvironmentalSpecs environmental_specs = {
+    .temperature_min_c = -40.0,              // -40°C minimum temperature
+    .temperature_max_c = 85.0,               // +85°C maximum temperature
+    .temperature_coeff_timing_ppm_c = 50.0,  // 50 PPM/°C timing coefficient
+    .temperature_coeff_amplitude_percent_c = 0.01, // 0.01%/°C amplitude coeff
+    
+    .humidity_max_percent_rh = 95.0,         // 95% RH maximum humidity
+    .contamination_tolerance_level = 2,       // Industrial contamination level
+    
+    .shock_max_g = 50.0,                     // 50G maximum shock
+    .shock_duration_ms = 11.0,               // 11 ms shock duration
+    .vibration_max_g = 5.0,                  // 5G maximum vibration
+    .vibration_freq_min_hz = 10.0,           // 10 Hz minimum frequency
+    .vibration_freq_max_hz = 500.0,          // 500 Hz maximum frequency
+    
+    .thermal_cycles_min = 1000,              // 1000 thermal cycles minimum
+    .thermal_cycle_rate_c_min = 1.0,         // 1°C/min thermal rate
+    
+    .mtbf_hours = 100000.0,                  // 100,000 hour MTBF
+    .operational_lifetime_years = 20.0        // 20 year operational lifetime
+};
+```
+
+### Long-Term Reliability and Aging Characteristics
+
+Long-term reliability specifications ensure continued computational accuracy and system functionality throughout operational lifetime while providing predictable aging characteristics that enable maintenance planning and system lifecycle management. Understanding reliability requirements involves recognizing that temporal-analog processing depends on precision electrical characteristics that may change over time while requiring stability that maintains computational effectiveness.
+
+Component aging specifications address changes in electrical characteristics over operational lifetime including crystal oscillator aging, voltage reference drift, amplifier offset drift, and memristive element aging that could affect computational accuracy. Aging specifications require predictable characteristic changes that enable compensation and calibration procedures.
+
+Crystal oscillator aging specifications require frequency stability better than 5 parts per million per year over operational lifetime while providing predictable aging characteristics that enable frequency correction when required for enhanced timing accuracy. Oscillator specifications include both initial accuracy and long-term stability requirements.
+
+Voltage reference aging specifications require voltage stability better than 50 parts per million per year over operational lifetime while providing predictable drift characteristics that enable voltage correction when required for enhanced amplitude accuracy. Reference specifications address both temperature stability and long-term aging characteristics.
+
+Amplifier aging specifications require offset voltage drift less than 10 microvolts per year and gain drift less than 0.01% per year over operational lifetime while maintaining noise and bandwidth characteristics within specification limits. Amplifier aging addresses both input offset characteristics and gain stability requirements.
+
+Memristive element aging specifications require resistance stability within 1% per year while maintaining programming capability and data retention characteristics throughout operational lifetime. Memristive aging addresses both resistance drift and programming endurance degradation that could affect adaptive learning capability.
+
+System-level reliability specifications require mean time between failures exceeding 100,000 hours while providing failure mode analysis and predictive maintenance capability that enables system lifecycle management. Reliability specifications address both random failures and wear-out mechanisms that affect operational lifetime.
+
+Calibration and maintenance procedures enable periodic correction of aging effects while maintaining computational accuracy throughout operational lifetime. Calibration procedures include timing calibration, amplitude calibration, and memristive weight calibration that compensate for predictable aging effects while maintaining system performance.
+
+```electrical_specs
+// TAPF Long-Term Reliability and Aging Specifications
+typedef struct {
+    // Component aging specifications
+    float crystal_aging_ppm_year;         // Crystal frequency aging
+    float voltage_ref_aging_ppm_year;     // Voltage reference aging
+    float amplifier_offset_drift_uv_year; // Amplifier offset drift
+    float amplifier_gain_drift_percent_year; // Amplifier gain drift
+    float memristive_resistance_drift_percent_year; // Memristive aging
+    
+    // System reliability
+    float mtbf_hours;                     // Mean time between failures
+    float failure_rate_fit;               // Failure rate in FIT
+    float wear_out_lifetime_years;        // Wear-out lifetime
+    
+    // Maintenance and calibration
+    float calibration_interval_months;    // Calibration interval
+    float drift_compensation_capability_percent; // Compensation range
+    int self_calibration_capability;      // Self-calibration available
+    
+    // Predictive maintenance
+    int health_monitoring_capability;     // Health monitoring available
+    float degradation_prediction_accuracy_percent; // Prediction accuracy
+    float remaining_lifetime_accuracy_percent; // Lifetime prediction
+} TAPF_ReliabilitySpecs;
+
+// Standard long-term reliability specifications
+static const TAPF_ReliabilitySpecs reliability_specs = {
+    .crystal_aging_ppm_year = 5.0,           // 5 PPM/year crystal aging
+    .voltage_ref_aging_ppm_year = 50.0,      // 50 PPM/year voltage ref aging
+    .amplifier_offset_drift_uv_year = 10.0,  // 10 µV/year offset drift
+    .amplifier_gain_drift_percent_year = 0.01, // 0.01%/year gain drift
+    .memristive_resistance_drift_percent_year = 1.0, // 1%/year resistance drift
+    
+    .mtbf_hours = 100000.0,                  // 100,000 hour MTBF
+    .failure_rate_fit = 100.0,               // 100 FIT failure rate
+    .wear_out_lifetime_years = 20.0,         // 20 year wear-out lifetime
+    
+    .calibration_interval_months = 12.0,     // 12 month calibration interval
+    .drift_compensation_capability_percent = 5.0, // 5% compensation range
+    .self_calibration_capability = 1,        // Self-calibration available
+    
+    .health_monitoring_capability = 1,       // Health monitoring available
+    .degradation_prediction_accuracy_percent = 90.0, // 90% prediction accuracy
+    .remaining_lifetime_accuracy_percent = 80.0 // 80% lifetime prediction
+};
+```
+
+These comprehensive electrical signal implementation standards establish the engineering foundation that enables practical implementation of revolutionary temporal-analog processing while maintaining compatibility with current semiconductor technology and providing clear pathways for manufacturing and deployment across diverse application domains. The specifications demonstrate how temporal-analog processing can achieve superior computational capabilities while meeting the reliability and performance requirements necessary for practical commercial deployment.
 
 ## Implementation Architecture: Realistic Development Path
 
